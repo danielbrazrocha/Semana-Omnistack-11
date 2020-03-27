@@ -27,7 +27,7 @@ module.exports = {
 
   async create (request, response) { // Criação do caso.
     const { title, description, value } = request.body; // Dados vindo do corpo.
-    const ong_id = req.headers.authorization; // *Autorização.
+    const ong_id = request.headers.authorization; // *Autorização.
 
     const [id] = await connection('incidents').insert({
       title,
